@@ -60,8 +60,17 @@
         ],
         "branches": {
         }
+      },
+      "/Users/scottdevoss/turing/3mod/projects/market_money/app/models/market.rb": {
+        "lines": [
+          0,
+          null,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1701722994
+    "timestamp": 1701724180
   }
 }
