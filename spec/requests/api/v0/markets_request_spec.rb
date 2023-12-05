@@ -9,6 +9,7 @@ describe "Markets API" do
     expect(response).to be_successful
 
     markets = JSON.parse(response.body, symbolize_names: true)
+    require 'pry'; binding.pry
     
 
     expect(markets.count).to eq(10)
