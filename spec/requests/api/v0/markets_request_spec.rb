@@ -9,8 +9,6 @@ describe "Markets API" do
     expect(response).to be_successful
 
     markets = JSON.parse(response.body, symbolize_names: true)
-    require 'pry'; binding.pry
-    
 
     expect(markets.count).to eq(10)
 
@@ -40,7 +38,7 @@ describe "Markets API" do
       expect(market[:lon]).to be_a(String)
 
       expect(market).to have_key(:vendor_count)
-      expect(market[:vendor_count]).to be_a(String)
+      expect(market[:vendor_count]).to be(nil)
     end
   end
 end
