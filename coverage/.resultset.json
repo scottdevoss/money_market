@@ -68,6 +68,28 @@
           1,
           1,
           1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/scottdevoss/turing/3mod/projects/market_money/app/serializers/market_vendor_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/scottdevoss/turing/3mod/projects/market_money/app/serializers/vendor_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
           null
         ]
       },
@@ -115,6 +137,6 @@
         }
       }
     },
-    "timestamp": 1701816412
+    "timestamp": 1701818014
   }
 }
