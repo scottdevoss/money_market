@@ -9,6 +9,7 @@ describe "Markets API" do
     expect(response).to be_successful
 
     markets = JSON.parse(response.body, symbolize_names: true)
+    
 
     expect(markets.count).to eq(10)
 
@@ -36,6 +37,9 @@ describe "Markets API" do
 
       expect(market).to have_key(:lon)
       expect(market[:lon]).to be_a(String)
+
+      expect(market).to have_key(:vendor_count)
+      expect(market[:vendor_count]).to be_a(String)
     end
   end
 end
