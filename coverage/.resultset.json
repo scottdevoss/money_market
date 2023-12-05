@@ -63,6 +63,14 @@
           null
         ]
       },
+      "/Users/scottdevoss/turing/3mod/projects/market_money/app/serializers/market_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/scottdevoss/turing/3mod/projects/market_money/app/channels/application_cable/channel.rb": {
         "lines": [
           0,
@@ -107,6 +115,6 @@
         }
       }
     },
-    "timestamp": 1701814436
+    "timestamp": 1701816412
   }
 }
