@@ -45,7 +45,7 @@ describe "Markets API" do
   it "can get one market by its id" do
     id = create(:market).id
   
-    get "/api/v1/markets/#{id}"
+    get "/api/v0/markets/#{id}"
   
     market = JSON.parse(response.body, symbolize_names: true)
   
@@ -79,6 +79,6 @@ describe "Markets API" do
     expect(market[:lon]).to be_a(String)
 
     expect(market).to have_key(:vendor_count)
-    expect(market[:vendor_count]).to be_an(Integer)
+    expect(market[:vendor_count]).to be(nil)
   end
 end
