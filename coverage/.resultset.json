@@ -1,58 +1,6 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/scottdevoss/turing/3mod/projects/market_money/app/models/market.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/scottdevoss/turing/3mod/projects/market_money/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/scottdevoss/turing/3mod/projects/market_money/app/models/market_vendor.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/scottdevoss/turing/3mod/projects/market_money/app/models/vendor.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/scottdevoss/turing/3mod/projects/market_money/app/controllers/api/v0/markets_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/scottdevoss/turing/3mod/projects/market_money/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
       "/Users/scottdevoss/turing/3mod/projects/market_money/app/channels/application_cable/channel.rb": {
         "lines": [
           0,
@@ -67,6 +15,25 @@
         "lines": [
           0,
           0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/scottdevoss/turing/3mod/projects/market_money/app/controllers/api/v0/markets_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/scottdevoss/turing/3mod/projects/market_money/app/controllers/application_controller.rb": {
+        "lines": [
           0,
           0
         ],
@@ -95,8 +62,53 @@
         ],
         "branches": {
         }
+      },
+      "/Users/scottdevoss/turing/3mod/projects/market_money/app/models/application_record.rb": {
+        "lines": [
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/scottdevoss/turing/3mod/projects/market_money/app/models/market.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/scottdevoss/turing/3mod/projects/market_money/app/models/market_vendor.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/scottdevoss/turing/3mod/projects/market_money/app/models/vendor.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1701738353
+    "timestamp": 1701743751
   }
 }
