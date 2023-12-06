@@ -11,7 +11,8 @@ class Api::V0::VendorsController < ApplicationController
   end
 
   def create
-    
+    vendor = Vendor.create!(vendor_params)
+    render json: VendorSerializer.new(vendor)
   end
 
   private
@@ -19,5 +20,9 @@ class Api::V0::VendorsController < ApplicationController
   def not_found_response(exception)
     render json: ErrorSerializer.new(ErrorMessage.new(exception.message, 404))
       .serialize_json, status: :not_found
+  end
+
+  def vendor_params
+    params.require(:vendor).permit(:name, :description, :contact_name, :contact_phone, :credit_accepted)
   end
 end
