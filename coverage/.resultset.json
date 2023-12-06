@@ -97,6 +97,15 @@
           null
         ]
       },
+      "/Users/scottdevoss/turing/3mod/projects/market_money/app/controllers/api/v0/vendors_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/scottdevoss/turing/3mod/projects/market_money/app/serializers/error_serializer.rb": {
         "lines": [
           1,
@@ -173,6 +182,6 @@
         }
       }
     },
-    "timestamp": 1701821508
+    "timestamp": 1701823025
   }
 }

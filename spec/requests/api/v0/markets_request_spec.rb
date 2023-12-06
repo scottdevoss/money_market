@@ -99,4 +99,20 @@ describe "Markets API" do
       expect(data[:errors].first[:title]).to eq("Couldn't find Market with 'id'=0")
     end
   end
+
+  it "gets all vendors for a market" do
+    market = create(:market)
+    vendors = create_list(:vendor, 3)
+
+    market.vendors << vendors
+
+    get "/api/v0/markets/#{market.id}/vendors"
+
+    vendors = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response).to be_successful
+
+    vendors = vendors[:data]
+
+  end
 end
