@@ -38,30 +38,35 @@
           null
         ]
       },
-      "/Users/scottdevoss/turing/3mod/projects/market_money/app/controllers/api/v0/markets_controller.rb": {
+      "/Users/scottdevoss/turing/3mod/projects/market_money/app/controllers/api/v0/market_vendors_controller.rb": {
         "lines": [
           1,
           1,
-          null,
           1,
           1,
-          null,
-          null,
-          1,
-          2,
           null,
           null,
           1,
           null,
           1,
           1,
-          null,
           null,
           null
         ]
       },
       "/Users/scottdevoss/turing/3mod/projects/market_money/app/controllers/application_controller.rb": {
         "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/scottdevoss/turing/3mod/projects/market_money/app/serializers/market_vendor_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
           1,
           null
         ]
@@ -81,7 +86,7 @@
           null
         ]
       },
-      "/Users/scottdevoss/turing/3mod/projects/market_money/app/serializers/market_vendor_serializer.rb": {
+      "/Users/scottdevoss/turing/3mod/projects/market_money/app/serializers/vendor_serializer.rb": {
         "lines": [
           1,
           1,
@@ -92,14 +97,25 @@
           null
         ]
       },
-      "/Users/scottdevoss/turing/3mod/projects/market_money/app/serializers/vendor_serializer.rb": {
+      "/Users/scottdevoss/turing/3mod/projects/market_money/app/controllers/api/v0/markets_controller.rb": {
         "lines": [
-          1,
           1,
           1,
           null,
           1,
           1,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
           null
         ]
       },
@@ -124,6 +140,16 @@
           null,
           null,
           1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
           null,
           1,
           2,
@@ -136,7 +162,7 @@
           null,
           null,
           1,
-          2,
+          3,
           null,
           null
         ]
@@ -217,6 +243,6 @@
         }
       }
     },
-    "timestamp": 1701885512
+    "timestamp": 1701899622
   }
 }

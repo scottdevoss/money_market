@@ -138,4 +138,61 @@ describe "Vendors API" do
     expect(data[:errors].first[:status]).to eq("400")
     expect(data[:errors].first[:title]).to eq("Validation failed: Contact name can't be blank, Contact phone can't be blank")
   end
+
+  it "can update an existing vendor" do
+    id = create(:vendor).id
+
+    previous_name = Vendor.last.name
+    vendor_params = {
+      name: "Walmart"
+    }
+
+    headers = {"CONTENT_TYPE" => "application/json"}
+
+    patch "/api/v0/vendors/#{id}", headers: headers, params: JSON.generate({vendor: vendor_params})
+    vendor = Vendor.find_by(id: id)
+
+    expect(response).to be_successful
+    expect(response.status).to eq(200)
+    expect(vendor.name).to_not eq(previous_name)
+    expect(vendor.name).to eq("Walmart")
+  end
+
+  xit 'update will gracefully handle if invalid info is entered' do
+    vendor = create(:vendor)
+    
+    vendor_params = ({
+                    name: '',
+                    description: 'a mystery'
+                  })
+    headers = {'CONTENT_TYPE' => 'application/json'}
+  
+    patch "/api/v0/vendors/#{vendor.id}", headers: headers, params: JSON.generate(vendor: vendor_params)
+     
+    expect(response).to_not be_successful
+    expect(response.status).to eq(400)
+
+    data = JSON.parse(response.body, symbolize_names: true)
+
+    expect(data[:errors]).to be_a(Array)
+    expect(data[:errors].first[:status]).to eq("400")
+    expect(data[:errors].first[:title]).to eq("Validation failed: Name can't be blank")
+  end
+
+  xit "update will gracefully handle if a vendor id doesn't exist" do
+
+  end
+
+  it "deletes a vendor" do
+    vendor = create(:vendor)
+
+    expect(Vendor.count).to eq(1)
+
+    delete "/api/v0/vendors/#{vendor.id}"
+
+    expect(response).to be_successful
+    expect(response.status).to eq(204)
+    expect(Vendor.count).to eq(0)
+    expect{Vendor.find(vendor.id)}.to raise_error(ActiveRecord::RecordNotFound)
+  end
 end
