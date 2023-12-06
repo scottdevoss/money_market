@@ -10,6 +10,10 @@ class Api::V0::VendorsController < ApplicationController
     render json: VendorSerializer.new(Vendor.find(params[:id]))
   end
 
+  def create
+    
+  end
+
   private
  
   def not_found_response(exception)
