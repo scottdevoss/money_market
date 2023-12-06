@@ -178,4 +178,23 @@ describe "Vendors API" do
     expect(data[:errors].first[:status]).to eq("400")
     expect(data[:errors].first[:title]).to eq("Validation failed: Name can't be blank")
   end
+
+  xit "update will gracefully handle if a vendor id doesn't exist" do
+
+  end
+
+  it "deletes a vendor" do
+    vendor = create(:vendor)
+
+    expect(Vendor.count).to eq(1)
+
+    delete "/api/v0/vendors/#{vendor.id}"
+
+    expect(response).to be_successful
+    expect(response.status).to eq(204)
+    expect(Vendor.count).to eq(0)
+    expect{Vendor.find(vendor.id)}.to raise_error(ActiveRecord::RecordNotFound)
+
+    # require 'pry'; binding.pry
+  end
 end
