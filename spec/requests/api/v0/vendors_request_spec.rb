@@ -50,4 +50,17 @@ describe "Vendors API" do
     expect(data[:errors].first[:status]).to eq('404')
     expect(data[:errors].first[:title]).to eq("Couldn't find Market with 'id'=0")
   end
+
+  it "gets one vendor" do
+    vendor = create(:vendor)
+
+    get "/api/v0/vendors/#{vendor.id}"
+
+    vendor = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response).to be_successful
+
+    
+    require 'pry'; binding.pry
+  end
 end
