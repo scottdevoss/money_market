@@ -45,9 +45,9 @@ describe "Vendors API" do
     expect(response.status).to eq(404)
 
     data = JSON.parse(response.body, symbolize_names: true)
-
+    
     expect(data[:errors]).to be_a(Array)
     expect(data[:errors].first[:status]).to eq('404')
-    expect(data[:errors].first[:detail]).to eq("Couldn't find Market with 'id'=0")
+    expect(data[:errors].first[:title]).to eq("Couldn't find Market with 'id'=0")
   end
 end
