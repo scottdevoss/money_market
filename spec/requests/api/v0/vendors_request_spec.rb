@@ -152,7 +152,8 @@ describe "Vendors API" do
     patch "/api/v0/vendors/#{id}", headers: headers, params: JSON.generate({vendor: vendor_params})
     vendor = Vendor.find_by(id: id)
 
-    expect(response).to be_successfull
+    expect(response).to be_successful
+    expect(response.status).to eq(200)
     expect(vendor.name).to_not eq(previous_name)
     expect(vendor.name).to eq("Walmart")
   end
