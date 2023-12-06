@@ -194,7 +194,5 @@ describe "Vendors API" do
     expect(response.status).to eq(204)
     expect(Vendor.count).to eq(0)
     expect{Vendor.find(vendor.id)}.to raise_error(ActiveRecord::RecordNotFound)
-
-    # require 'pry'; binding.pry
   end
 end
