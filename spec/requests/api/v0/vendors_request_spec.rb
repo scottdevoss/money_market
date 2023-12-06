@@ -157,4 +157,25 @@ describe "Vendors API" do
     expect(vendor.name).to_not eq(previous_name)
     expect(vendor.name).to eq("Walmart")
   end
+
+  xit 'update will gracefully handle if invalid info is entered' do
+    vendor = create(:vendor)
+    
+    vendor_params = ({
+                    name: '',
+                    description: 'a mystery'
+                  })
+    headers = {'CONTENT_TYPE' => 'application/json'}
+  
+    patch "/api/v0/vendors/#{vendor.id}", headers: headers, params: JSON.generate(vendor: vendor_params)
+     
+    expect(response).to_not be_successful
+    expect(response.status).to eq(400)
+
+    data = JSON.parse(response.body, symbolize_names: true)
+
+    expect(data[:errors]).to be_a(Array)
+    expect(data[:errors].first[:status]).to eq("400")
+    expect(data[:errors].first[:title]).to eq("Validation failed: Name can't be blank")
+  end
 end
