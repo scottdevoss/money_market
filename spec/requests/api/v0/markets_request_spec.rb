@@ -44,13 +44,15 @@ describe "Markets API" do
   end
 
   it "can get one market by its id" do
-    id = create(:market).id
+    market = create(:market)
   
-    get "/api/v0/markets/#{id}"
+    get "/api/v0/markets/#{market.id}"
   
-    market = JSON.parse(response.body, symbolize_names: true)[:data]
+    market = JSON.parse(response.body, symbolize_names: true)
   
     expect(response).to be_successful
+
+    market = market[:data]
     
     expect(market).to have_key(:id)
     expect(market[:id]).to be_a(String)
@@ -81,5 +83,20 @@ describe "Markets API" do
 
     expect(market[:attributes]).to have_key(:vendor_count)
     expect(market[:attributes][:vendor_count]).to be(nil)
+  end
+
+  describe 'sad paths' do
+    it "will gracefully handle if a market id doesn't exist" do
+      get "/api/v0/markets/0"
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(404)
+
+      data = JSON.parse(response.body, symbolize_names: true)
+      
+      expect(data[:errors]).to be_a(Array)
+      expect(data[:errors].first[:status]).to eq("404")
+      expect(data[:errors].first[:title]).to eq("Couldn't find Market with 'id'=0")
+    end
   end
 end
