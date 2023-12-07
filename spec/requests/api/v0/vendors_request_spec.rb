@@ -211,4 +211,17 @@ describe "Vendors API" do
     expect(Vendor.count).to eq(0)
     expect{Vendor.find(vendor.id)}.to raise_error(ActiveRecord::RecordNotFound)
   end
+
+  it "delete will gracefully handle if a vendor id doesn't exist" do
+    delete '/api/v0/vendors/0'
+
+    expect(response).to_not be_successful
+    expect(response.status).to eq(404)
+
+    data = JSON.parse(response.body, symbolize_names: true)
+
+    expect(data[:errors]).to be_a(Array)
+    expect(data[:errors].first[:status]).to eq('404')
+    expect(data[:errors].first[:title]).to eq("Couldn't find Vendor with 'id'=0")
+  end
 end
