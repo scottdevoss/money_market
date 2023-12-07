@@ -46,16 +46,26 @@
           1,
           null,
           null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
           1,
           null,
           1,
-          0,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
+          5,
           null,
           null
         ]
@@ -100,6 +110,38 @@
           null,
           1,
           1,
+          null
+        ]
+      },
+      "/Users/scottdevoss/turing/3mod/projects/market_money/app/serializers/error_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          5,
+          null,
+          null,
+          1,
+          null,
+          5,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/scottdevoss/turing/3mod/projects/market_money/app/poros/error_message.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          5,
+          5,
+          null,
           null
         ]
       },
@@ -173,38 +215,6 @@
           null
         ]
       },
-      "/Users/scottdevoss/turing/3mod/projects/market_money/app/serializers/error_serializer.rb": {
-        "lines": [
-          1,
-          1,
-          4,
-          null,
-          null,
-          1,
-          null,
-          4,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/scottdevoss/turing/3mod/projects/market_money/app/poros/error_message.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          4,
-          4,
-          null,
-          null
-        ]
-      },
       "/Users/scottdevoss/turing/3mod/projects/market_money/app/channels/application_cable/channel.rb": {
         "lines": [
           0,
@@ -249,6 +259,6 @@
         }
       }
     },
-    "timestamp": 1701900413
+    "timestamp": 1701979376
   }
 }

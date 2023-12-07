@@ -4,10 +4,20 @@ class Api::V0::MarketVendorsController < ApplicationController
     render json: MarketVendorSerializer.new(market_vendor), status: 201
   end
 
+  # def destroy
+  #   # require 'pry'; binding.pry
+  #   market_vendor = MarketVendor.find(params[:id])
+  #   render json: MarketVendorSerializer.delete(market_vendor), status: 204
+  # end
+
   def destroy
-    # require 'pry'; binding.pry
-    market_vendor = MarketVendor.find(params[:id])
-    render json: MarketVendorSerializer.delete(market_vendor), status: 204
+    market_vendor = MarketVendor.find_by(market_vendor_params)
+    if market_vendor.nil?
+      render json: ErrorSerializer.new(ErrorMessage.new("No MarketVendor with market_id=#{market_vendor_params[:market_id]} AND vendor_id=#{market_vendor_params[:vendor_id]} exists", 404))
+        .serialize_json, status: :not_found
+    else
+      render json: MarketVendor.delete(market_vendor), status: 204
+    end
   end
 
   private
